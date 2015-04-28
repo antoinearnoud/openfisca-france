@@ -255,7 +255,7 @@ class casa(DatedFormulaColumn):
         law = simulation.legislation_at(period.start)
 
         irpp = self.cast_from_entity_to_roles(irpp_holder)
-        casa = (taux_csg_remplacement == 3) * law.prelsoc.add_ret * rstbrut * (irpp > law.ir.recouvrement.seuil)
+        casa = (taux_csg_remplacement == 3) * law.prelsoc.add_ret * rstbrut * (irpp > law.impot_revenu.recouvrement.seuil)
 
         return period, - casa
 
